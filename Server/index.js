@@ -25,7 +25,7 @@ const AppointmentSchema = new mongoose.Schema({
 const Appointment = mongoose.model('Appointment', AppointmentSchema);
 
 // Routes
-app.get('/appointments', async (req, res) => {
+app.get('https://hospital-appointment-system-delta.vercel.app//appointments', async (req, res) => {
   try {
     const appointments = await Appointment.find().sort({'date':1});
     res.json(appointments);
@@ -34,7 +34,7 @@ app.get('/appointments', async (req, res) => {
   }
 });
 
-app.post('/appointments', async (req, res) => {
+app.post('https://hospital-appointment-system-delta.vercel.app//appointments', async (req, res) => {
   
   try {
     const { name, date, age, city } = req.body;
@@ -46,7 +46,7 @@ app.post('/appointments', async (req, res) => {
   }
 });
 
-app.put('/appointments/:id', async (req, res) => {
+app.put('https://hospital-appointment-system-delta.vercel.app//appointments/:id', async (req, res) => {
   const { id } = req.params;
   const { name, date, age, city } = req.body;
 
@@ -67,7 +67,7 @@ app.put('/appointments/:id', async (req, res) => {
   }
 });
 
-app.delete('/appointments/:id', async (req, res) => {
+app.delete('https://hospital-appointment-system-delta.vercel.app//appointments/:id', async (req, res) => {
     const { id } = req.params;
   
     try {
